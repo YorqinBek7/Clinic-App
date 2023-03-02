@@ -16,7 +16,7 @@ class ClinicApp extends StatelessWidget {
       title: 'Clinic',
       debugShowCheckedModeBanner: false,
       theme: _lightMode(),
-      initialRoute: ConstantRoutes.doctorsScreen,
+      initialRoute: ClinicRoutes.mainTab,
       onGenerateRoute: Routes().generatedRoute,
     );
   }
@@ -43,6 +43,12 @@ class ClinicApp extends StatelessWidget {
           color: ClinicColors.appBarTextColor,
           fontSize: 29.0,
           fontWeight: FontWeight.w900,
+        ),
+        displayMedium: TextStyle(
+          fontFamily: 'Lato',
+          color: ClinicColors.appBarTextColor,
+          fontSize: 22.0,
+          fontWeight: FontWeight.w800,
         ),
         displaySmall: TextStyle(
           fontFamily: 'Lato',

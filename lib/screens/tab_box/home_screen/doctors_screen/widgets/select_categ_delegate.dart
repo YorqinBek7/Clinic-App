@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../blocs/listen_pin_categories/listen_pin_categories_bloc.dart';
 
 class SelectCategories extends SliverPersistentHeaderDelegate {

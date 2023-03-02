@@ -1,32 +1,18 @@
-import 'package:clinic_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../global_widgets/custom_search_field.dart';
 
 class SearchFields extends SliverPersistentHeaderDelegate {
+  final TextEditingController controller;
+  SearchFields({required this.controller});
+
   @override
   Widget build(
           BuildContext context, double shrinkOffset, bool overlapsContent) =>
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: TextField(
-          decoration: InputDecoration(
-            fillColor: ClinicColors.white,
-            filled: true,
-            hintText: 'Search doctor by name',
-            hintStyle: Theme.of(context)
-                .textTheme
-                .displaySmall!
-                .copyWith(color: ClinicColors.C_AFAFAF),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
-                color: ClinicColors.C_F2F2F2,
-              ),
-            ),
-            suffixIcon: const Icon(
-              Icons.search_sharp,
-              color: ClinicColors.C_77789A,
-            ),
-          ),
+        child: CustomSearchField(
+          hintText: 'Search doctor by name',
+          controller: controller,
         ),
       );
 

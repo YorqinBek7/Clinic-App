@@ -28,11 +28,13 @@ class DoctorsScreenView extends StatefulWidget {
 
 class _DoctorsScreenViewState extends State<DoctorsScreenView> {
   int currentIndex = 0;
+  final TextEditingController SearchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          // APPBAR
           SliverAppBar(
             automaticallyImplyLeading: false,
             pinned: true,
@@ -54,12 +56,16 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
           const SliverToBoxAdapter(
             child: SizedBox(height: 18.0),
           ),
+
+          //  SEARCH FIELD
           SliverPersistentHeader(
-            delegate: SearchFields(),
+            delegate: SearchFields(controller: SearchController),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(height: 18.0),
           ),
+
+          // SELECT CATEGORIES BUTTONS
           SliverPersistentHeader(
             pinned: true,
             delegate: SelectCategories(
@@ -109,6 +115,8 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
           const SliverToBoxAdapter(
             child: SizedBox(height: 18.0),
           ),
+          // DOCTORS LIST
+
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: 10,
