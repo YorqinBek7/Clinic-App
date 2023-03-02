@@ -1,6 +1,7 @@
 import 'package:clinic_app/blocs/listen_pin_categories/listen_pin_categories_bloc.dart';
 import 'package:clinic_app/screens/tab_box/global_widgets/appbar_back_button.dart';
 import 'package:clinic_app/utils/colors.dart';
+import 'package:clinic_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:io' show Platform;
@@ -120,65 +121,69 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: 10,
-              (context, index) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(
-                  padding: EdgeInsets.all(5.0),
-                  height: 110.0,
-                  decoration: BoxDecoration(
-                    color: ClinicColors.white,
-                    borderRadius: BorderRadius.circular(14.0),
-                  ),
-                  margin: EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 80.0,
-                        height: 80.0,
-                        decoration: BoxDecoration(
-                          color: ClinicColors.C_AFAFAF,
-                          borderRadius: BorderRadius.circular(14.0),
+              (context, index) => GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                    context, ClinicRoutes.doctorDetailsScreen),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Container(
+                    padding: EdgeInsets.all(5.0),
+                    height: 110.0,
+                    decoration: BoxDecoration(
+                      color: ClinicColors.white,
+                      borderRadius: BorderRadius.circular(14.0),
+                    ),
+                    margin: EdgeInsets.symmetric(vertical: 5.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 80.0,
+                          height: 80.0,
+                          decoration: BoxDecoration(
+                            color: ClinicColors.C_AFAFAF,
+                            borderRadius: BorderRadius.circular(14.0),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Dr. Mahmud Nik Hasan',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displayMedium!
-                                  .copyWith(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              '100k views',
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              'Cardialcast - Dhara Medical College Hospital',
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
+                        SizedBox(
+                          width: 10.0,
                         ),
-                      )
-                    ],
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Dr. Mahmud Nik Hasan',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayMedium!
+                                    .copyWith(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                '100k views',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                'Cardialcast - Dhara Medical College Hospital',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

@@ -10,5 +10,7 @@ class ClinicColors {
   static const Color C_AFAFAF = Color(0xffAFAFAF);
   static const Color C_808080 = Color(0xff808080);
   static const Color C_0F9B7B = Color(0xff0F9B7B);
-  static const Color F0F9F8 = Color(0xffF0F9F8);
+  static const Color C_F0F9F8 = Color(0xffF0F9F8);
+  static const Color C_1FB091 = Color(0xff1FB091);
+  static const Color C_DEECEC = Color(0xffDEECEC);
 }

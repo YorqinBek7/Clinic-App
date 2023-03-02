@@ -62,7 +62,7 @@ class MainTab extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        color: ClinicColors.F0F9F8,
+        color: ClinicColors.C_F0F9F8,
       ),
       child: icon,
     );
