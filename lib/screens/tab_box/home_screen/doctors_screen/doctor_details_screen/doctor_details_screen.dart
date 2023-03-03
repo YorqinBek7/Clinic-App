@@ -1,10 +1,10 @@
 import 'package:clinic_app/screens/tab_box/global_widgets/appbar_back_button.dart';
 import 'package:clinic_app/utils/colors.dart';
+import 'package:clinic_app/utils/constants.dart';
 import 'package:clinic_app/utils/icons.dart';
 import 'package:flutter/material.dart';
-import 'dart:io' show Platform;
-
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:io' show Platform;
 
 class DoctorDetailsScreen extends StatefulWidget {
   const DoctorDetailsScreen({super.key});
@@ -23,10 +23,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: appBarBackButton(Platform.isAndroid, context),
-          ),
+          appBarBackButton(Platform.isAndroid, context),
           Spacer(),
         ],
       ),
@@ -40,7 +37,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
             Stack(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * .8,
+                  height: MediaQuery.of(context).size.height * .74,
                   decoration: BoxDecoration(
                     color: ClinicColors.C_0F9B7B,
                     borderRadius: BorderRadius.only(
@@ -49,6 +46,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                     ),
                   ),
                 ),
+
+                // ABOUT DOCTOR VIEW,
                 Positioned(
                   top: 114.0,
                   bottom: 0.0,
@@ -63,134 +62,159 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         topRight: Radius.circular(41.0),
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _customMediumText(_textStyle, 'About doctor'),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        _customSmallText(
-                          _textStyle,
-                          'Dr.Mahmud Nik is the top most Cardiologistspecialist in Dhaka Medical Collage Hospitalal Dhaka. He achived several awards for hiswonderful contirbution his own field. He isavalibe for private consultation.',
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        _customMediumText(_textStyle, 'Working time'),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        _customSmallText(
-                            _textStyle, 'Mon - Fri 09.00 AM - 08:00 PM'),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 17.0),
-                          child: TextButton(
-                            onPressed: () => {},
-                            child: Row(
-                              children: [
-                                Text(
-                                  'June',
-                                  style: _textStyle.displayMedium!.copyWith(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w900,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _customMediumText(_textStyle, 'About doctor'),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          _customSmallText(
+                            _textStyle,
+                            'Dr.Mahmud Nik is the top most Cardiologistspecialist in Dhaka Medical Collage Hospitalal Dhaka. He achived several awards for hiswonderful contirbution his own field. He isavalibe for private consultation.',
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          _customMediumText(_textStyle, 'Working time'),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          _customSmallText(
+                              _textStyle, 'Mon - Fri 09.00 AM - 08:00 PM'),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 17.0),
+                            child: TextButton(
+                              onPressed: () => {},
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'June',
+                                    style: _textStyle.displayMedium!.copyWith(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_down,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          // DAYS OF MONTH,
+                          SizedBox(
+                            height: 90.0,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 7,
+                              itemBuilder: (context, index) => GestureDetector(
+                                onTap: () =>
+                                    setState(() => _currentIndex = index),
+                                child: Container(
+                                  margin: EdgeInsets.only(
+                                    left: index == 0 ? 20.0 : 10.0,
+                                    right: index == 6 ? 20.0 : 0.0,
+                                  ),
+                                  height: 90.0,
+                                  width: 66.0,
+                                  decoration: BoxDecoration(
+                                    color: _currentIndex == index
+                                        ? ClinicColors.C_0F9B7B
+                                        : ClinicColors.white,
+                                    borderRadius: BorderRadius.circular(6.0),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Monday',
+                                        style:
+                                            _textStyle.displayMedium!.copyWith(
+                                          color: _currentIndex == index
+                                              ? ClinicColors.white
+                                              : ClinicColors.C_AFAFAF,
+                                          fontSize: 17.0,
+                                        ),
+                                      ),
+                                      Text(
+                                        '10',
+                                        style:
+                                            _textStyle.displayMedium!.copyWith(
+                                          color: _currentIndex == index
+                                              ? ClinicColors.white
+                                              : ClinicColors.C_AFAFAF,
+                                          fontSize: 17.0,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Icon(
-                                  Icons.keyboard_arrow_down,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 90.0,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 7,
-                            itemBuilder: (context, index) => GestureDetector(
-                              onTap: () =>
-                                  setState(() => _currentIndex = index),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                  left: index == 0 ? 20.0 : 10.0,
-                                  right: index == 6 ? 20.0 : 0.0,
-                                ),
-                                height: 90.0,
-                                width: 66.0,
-                                decoration: BoxDecoration(
-                                  color: _currentIndex == index
-                                      ? ClinicColors.C_0F9B7B
-                                      : ClinicColors.white,
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Monday',
-                                      style: _textStyle.displayMedium!.copyWith(
-                                        color: _currentIndex == index
-                                            ? ClinicColors.white
-                                            : ClinicColors.C_AFAFAF,
-                                        fontSize: 17.0,
-                                      ),
-                                    ),
-                                    Text(
-                                      '10',
-                                      style: _textStyle.displayMedium!.copyWith(
-                                        color: _currentIndex == index
-                                            ? ClinicColors.white
-                                            : ClinicColors.C_AFAFAF,
-                                        fontSize: 17.0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Spacer(),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 2.5),
-                                padding: EdgeInsets.all(10.0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  color: ClinicColors.C_DEECEC,
-                                ),
-                                height: 64.0,
-                                child: Icon(Icons.favorite),
-                              ),
-                              Expanded(
-                                child: Container(
+                          SizedBox(
+                            height: 10.0,
+                          ),
+
+                          /// BOTTOM BUTTONS
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 15.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
                                   margin: EdgeInsets.symmetric(horizontal: 2.5),
                                   padding: EdgeInsets.all(10.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: ClinicColors.C_0F9B7B,
+                                    color: ClinicColors.C_DEECEC,
                                   ),
                                   height: 64.0,
-                                  child: Center(
-                                    child: Text(
-                                      'Book Appointment',
-                                      style: _textStyle.displayMedium!.copyWith(
-                                        color: ClinicColors.white,
-                                        fontSize: 18.0,
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: ClinicColors.C_0F9B7B,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.pushNamed(context,
+                                        ClinicRoutes.bookAppoinmentScreen),
+                                    child: Container(
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 2.5),
+                                      padding: EdgeInsets.all(10.0),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        color: ClinicColors.C_0F9B7B,
+                                      ),
+                                      height: 64.0,
+                                      child: Center(
+                                        child: Text(
+                                          'Book Appointment',
+                                          style: _textStyle.displayMedium!
+                                              .copyWith(
+                                            color: ClinicColors.white,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Spacer(),
-                      ],
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -202,11 +226,11 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       children: [
-                        _doctorAchievments(
-                            context, ClinicIcons.people, _textStyle),
+                        _doctorAchievments(context, ClinicIcons.people,
+                            _textStyle, '1000+', 'Patient'),
                         Spacer(),
-                        _doctorAchievments(
-                            context, ClinicIcons.medal, _textStyle),
+                        _doctorAchievments(context, ClinicIcons.medal,
+                            _textStyle, '5 years', 'Experience'),
                       ],
                     ),
                   ),
@@ -251,6 +275,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
     BuildContext context,
     String icon,
     TextTheme textStyle,
+    String title,
+    String subtitle,
   ) {
     return Row(
       children: [
@@ -266,9 +292,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
           width: 18.0,
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '1000+',
+              title,
               style: textStyle.displaySmall!.copyWith(
                 color: ClinicColors.white,
                 fontWeight: FontWeight.w400,
@@ -276,7 +303,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               ),
             ),
             Text(
-              'Patient',
+              subtitle,
               style: textStyle.displaySmall!.copyWith(
                 color: ClinicColors.white,
                 fontWeight: FontWeight.w400,

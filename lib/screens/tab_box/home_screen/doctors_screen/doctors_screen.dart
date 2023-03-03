@@ -40,10 +40,7 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
             automaticallyImplyLeading: false,
             pinned: true,
             actions: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: appBarBackButton(Platform.isAndroid, context),
-              ),
+              appBarBackButton(Platform.isAndroid, context),
               const Spacer(),
               Text(
                 'Doctors',

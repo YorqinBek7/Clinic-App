@@ -16,42 +16,77 @@ class MainTab extends StatelessWidget {
           HomeScreen(),
         ],
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(13.0),
-          topRight: Radius.circular(13.0),
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: ClinicColors.white,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              activeIcon: _activeIcon(Icon(Icons.home)),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(ClinicIcons.notifBottom),
-              activeIcon:
-                  _activeIcon(SvgPicture.asset(ClinicIcons.notifBottom)),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(ClinicIcons.search),
-              activeIcon: _activeIcon(SvgPicture.asset(ClinicIcons.search)),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(ClinicIcons.stats),
-              activeIcon: _activeIcon(SvgPicture.asset(ClinicIcons.stats)),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(ClinicIcons.menu),
-              activeIcon: _activeIcon(SvgPicture.asset(ClinicIcons.menu)),
-              label: '',
-            ),
-          ],
+      bottomNavigationBar: SizedBox(
+        height: 70.0,
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(13.0),
+            topRight: Radius.circular(13.0),
+          ),
+          child: BottomNavigationBar(
+            selectedFontSize: 14,
+            unselectedFontSize: 14,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            selectedItemColor: Colors.blue,
+            unselectedItemColor: Colors.grey,
+            backgroundColor: ClinicColors.white,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: 15.0,
+                ),
+                activeIcon: _activeIcon(Icon(
+                  Icons.home,
+                  size: 15.0,
+                )),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  ClinicIcons.notifBottom,
+                  height: 20.0,
+                ),
+                activeIcon: _activeIcon(SvgPicture.asset(
+                  ClinicIcons.notifBottom,
+                  height: 20.0,
+                )),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  ClinicIcons.search,
+                  height: 20.0,
+                ),
+                activeIcon: _activeIcon(SvgPicture.asset(
+                  ClinicIcons.search,
+                  height: 20.0,
+                )),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  ClinicIcons.stats,
+                  height: 20.0,
+                ),
+                activeIcon: _activeIcon(SvgPicture.asset(ClinicIcons.stats)),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  ClinicIcons.menu,
+                  height: 20.0,
+                ),
+                activeIcon: _activeIcon(SvgPicture.asset(
+                  ClinicIcons.menu,
+                  height: 20.0,
+                )),
+                label: '',
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:clinic_app/screens/tab_box/home_screen/doctors_screen/doctor_details_screen/book_appointment_screen/book_appoinment_screen.dart';
 import 'package:clinic_app/screens/tab_box/home_screen/doctors_screen/doctor_details_screen/doctor_details_screen.dart';
 import 'package:clinic_app/screens/tab_box/home_screen/doctors_screen/doctors_screen.dart';
 import 'package:clinic_app/screens/tab_box/main_tab.dart';
@@ -14,6 +15,8 @@ class Routes {
         return navigateRoute(const MainTab(), settings);
       case ClinicRoutes.doctorDetailsScreen:
         return navigateRoute(DoctorDetailsScreen(), settings);
+      case ClinicRoutes.bookAppoinmentScreen:
+        return navigateRoute(BookAppointmentScreen(), settings);
       default:
         return navigateRoute(const UnknownScreen(), settings);
     }

@@ -3,9 +3,12 @@ import 'package:clinic_app/utils/colors.dart';
 import 'package:clinic_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const ClinicApp());
+  runApp(
+    const ClinicApp(),
+  );
 }
 
 class ClinicApp extends StatelessWidget {
