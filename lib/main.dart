@@ -3,7 +3,6 @@ import 'package:clinic_app/utils/colors.dart';
 import 'package:clinic_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:device_preview/device_preview.dart';
 
 void main() {
   runApp(
@@ -19,7 +18,7 @@ class ClinicApp extends StatelessWidget {
       title: 'Clinic',
       debugShowCheckedModeBanner: false,
       theme: _lightMode(),
-      initialRoute: ClinicRoutes.mainTab,
+      initialRoute: ClinicRoutes.patiendDetailScreen,
       onGenerateRoute: Routes().generatedRoute,
     );
   }
@@ -28,6 +27,14 @@ class ClinicApp extends StatelessWidget {
     return ThemeData(
       scaffoldBackgroundColor: ClinicColors.scaffoldColor,
       useMaterial3: true,
+      primaryColor: ClinicColors.C_0F9B7B,
+      checkboxTheme: CheckboxThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        checkColor: MaterialStateProperty.all(ClinicColors.white),
+        fillColor: MaterialStateProperty.all(ClinicColors.C_0F9B7B),
+      ),
       appBarTheme: const AppBarTheme(
         centerTitle: true,
         elevation: 0.0,

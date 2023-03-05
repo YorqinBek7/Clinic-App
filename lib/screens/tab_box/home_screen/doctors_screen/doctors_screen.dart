@@ -29,7 +29,7 @@ class DoctorsScreenView extends StatefulWidget {
 
 class _DoctorsScreenViewState extends State<DoctorsScreenView> {
   int currentIndex = 0;
-  final TextEditingController SearchController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
 
           //  SEARCH FIELD
           SliverPersistentHeader(
-            delegate: SearchFields(controller: SearchController),
+            delegate: SearchFields(controller: searchController),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(height: 18.0),
@@ -70,9 +70,9 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
               child: BlocBuilder<ListenPinCategsBloc, ListenPinCategsState>(
                 builder: (context, state) {
                   return Container(
-                    padding: EdgeInsets.all(3.0),
+                    padding: const EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(12.0),
                         bottomRight: Radius.circular(12.0),
                       ),
@@ -88,7 +88,7 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
                         onTap: () => setState(() => currentIndex = index),
                         child: Container(
                           height: 52.0,
-                          padding: EdgeInsets.symmetric(horizontal: 22.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 22.0),
                           margin: EdgeInsets.only(
                             left: index == 0 ? 25.0 : 10.0,
                             right: index == 10 - 1 ? 25.0 : 0.0,
@@ -124,13 +124,13 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Container(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     height: 110.0,
                     decoration: BoxDecoration(
                       color: ClinicColors.white,
                       borderRadius: BorderRadius.circular(14.0),
                     ),
-                    margin: EdgeInsets.symmetric(vertical: 5.0),
+                    margin: const EdgeInsets.symmetric(vertical: 5.0),
                     child: Row(
                       children: [
                         Container(
@@ -141,7 +141,7 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
                             borderRadius: BorderRadius.circular(14.0),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10.0,
                         ),
                         Flexible(
@@ -160,18 +160,18 @@ class _DoctorsScreenViewState extends State<DoctorsScreenView> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
-                              Text(
+                              const Text(
                                 '100k views',
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
-                              Text(
+                              const Text(
                                 'Cardialcast - Dhara Medical College Hospital',
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,

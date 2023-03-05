@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 class ClinicColors {
   static const Color white = Color(0xffffffff);
+  static const Color black = Color(0xff000000);
   static const Color scaffoldColor = Color(0xffF7F7F7);
   static const Color appBarTextColor = Color(0xff787A91);
   static const Color C_EBEBEB = Color(0xffEBEBEB);
@@ -13,4 +14,5 @@ class ClinicColors {
   static const Color C_F0F9F8 = Color(0xffF0F9F8);
   static const Color C_1FB091 = Color(0xff1FB091);
   static const Color C_DEECEC = Color(0xffDEECEC);
+  static const Color C_787A91 = Color(0xff787A91);
 }

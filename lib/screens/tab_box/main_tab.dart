@@ -19,7 +19,7 @@ class MainTab extends StatelessWidget {
       bottomNavigationBar: SizedBox(
         height: 70.0,
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(13.0),
             topRight: Radius.circular(13.0),
           ),
@@ -34,11 +34,11 @@ class MainTab extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.home,
                   size: 15.0,
                 ),
-                activeIcon: _activeIcon(Icon(
+                activeIcon: _activeIcon(const Icon(
                   Icons.home,
                   size: 15.0,
                 )),
@@ -94,7 +94,7 @@ class MainTab extends StatelessWidget {
 
   Container _activeIcon(Widget icon) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: ClinicColors.C_F0F9F8,

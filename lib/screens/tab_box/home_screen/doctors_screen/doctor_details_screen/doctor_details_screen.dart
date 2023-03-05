@@ -24,21 +24,21 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         automaticallyImplyLeading: false,
         actions: [
           appBarBackButton(Platform.isAndroid, context),
-          Spacer(),
+          const Spacer(),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             _doctorTitleView(context, _textStyle),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Stack(
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height * .74,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: ClinicColors.C_0F9B7B,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(41.0),
@@ -54,8 +54,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                   right: 0.0,
                   left: 0.0,
                   child: Container(
-                    padding: EdgeInsets.only(top: 25.0),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.only(top: 25.0),
+                    decoration: const BoxDecoration(
                       color: ClinicColors.scaffoldColor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(41.0),
@@ -67,18 +67,18 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _customMediumText(_textStyle, 'About doctor'),
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                           ),
                           _customSmallText(
                             _textStyle,
                             'Dr.Mahmud Nik is the top most Cardiologistspecialist in Dhaka Medical Collage Hospitalal Dhaka. He achived several awards for hiswonderful contirbution his own field. He isavalibe for private consultation.',
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20.0,
                           ),
                           _customMediumText(_textStyle, 'Working time'),
-                          SizedBox(
+                          const SizedBox(
                             height: 5.0,
                           ),
                           _customSmallText(
@@ -97,7 +97,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                                       fontWeight: FontWeight.w900,
                                     ),
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.keyboard_arrow_down,
                                   ),
                                 ],
@@ -156,7 +156,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                           ),
 
@@ -168,14 +168,15 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 2.5),
-                                  padding: EdgeInsets.all(10.0),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.5),
+                                  padding: const EdgeInsets.all(10.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     color: ClinicColors.C_DEECEC,
                                   ),
                                   height: 64.0,
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.favorite,
                                     color: ClinicColors.C_0F9B7B,
                                   ),
@@ -185,9 +186,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                                     onTap: () => Navigator.pushNamed(context,
                                         ClinicRoutes.bookAppoinmentScreen),
                                     child: Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 2.5),
-                                      padding: EdgeInsets.all(10.0),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 2.5),
+                                      padding: const EdgeInsets.all(10.0),
                                       decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(10.0),
@@ -210,7 +211,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                           ),
                         ],
@@ -228,7 +229,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                       children: [
                         _doctorAchievments(context, ClinicIcons.people,
                             _textStyle, '1000+', 'Patient'),
-                        Spacer(),
+                        const Spacer(),
                         _doctorAchievments(context, ClinicIcons.medal,
                             _textStyle, '5 years', 'Experience'),
                       ],
@@ -243,12 +244,12 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
     );
   }
 
-  Padding _customMediumText(TextTheme _textStyle, String text) {
+  Padding _customMediumText(TextTheme textStyle, String text) {
     return Padding(
       padding: const EdgeInsets.only(left: 25.0),
       child: Text(
         text,
-        style: _textStyle.displayMedium!.copyWith(
+        style: textStyle.displayMedium!.copyWith(
           fontSize: 20.0,
           fontWeight: FontWeight.w900,
         ),
@@ -256,12 +257,12 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
     );
   }
 
-  Padding _customSmallText(TextTheme _textStyle, String text) {
+  Padding _customSmallText(TextTheme textStyle, String text) {
     return Padding(
       padding: const EdgeInsets.only(left: 25.0),
       child: Text(
         text,
-        style: _textStyle.displayMedium!.copyWith(
+        style: textStyle.displayMedium!.copyWith(
           fontSize: 18.0,
           fontWeight: FontWeight.w400,
         ),
@@ -281,14 +282,14 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(10.0),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(10.0),
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: ClinicColors.C_1FB091,
           ),
           child: SvgPicture.asset(icon),
         ),
-        SizedBox(
+        const SizedBox(
           width: 18.0,
         ),
         Column(
@@ -331,7 +332,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 color: ClinicColors.C_AFAFAF,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10.0,
             ),
             Flexible(
@@ -347,7 +348,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                       maxLines: 1,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Flexible(
                     flex: 2,
                     child: Text(

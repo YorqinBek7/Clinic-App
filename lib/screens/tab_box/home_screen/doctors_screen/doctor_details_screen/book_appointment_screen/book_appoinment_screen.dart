@@ -35,9 +35,9 @@ class BookAppointmentView extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           appBarBackButton(Platform.isAndroid, context),
-          Spacer(),
+          const Spacer(),
         ],
-        title: Text('Appointment'),
+        title: const Text('Appointment'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -51,7 +51,7 @@ class BookAppointmentView extends StatelessWidget {
                     fontSize: 20.0,
                   ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             BlocBuilder<SelectDayCubit, int>(
@@ -65,7 +65,7 @@ class BookAppointmentView extends StatelessWidget {
                           BlocProvider.of<SelectDayCubit>(context).selectDay(0),
                       child: Container(
                         width: double.infinity,
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: state == 0
@@ -75,16 +75,16 @@ class BookAppointmentView extends StatelessWidget {
                         child: Row(
                           children: [
                             Container(
-                              padding: EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
                                 color: ClinicColors.white,
                               ),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.sunny,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5.0,
                             ),
                             Text(
@@ -102,7 +102,7 @@ class BookAppointmentView extends StatelessWidget {
                         ),
                       ),
                     )),
-                    SizedBox(
+                    const SizedBox(
                       width: 20.0,
                     ),
                     Expanded(
@@ -111,7 +111,7 @@ class BookAppointmentView extends StatelessWidget {
                             .selectDay(1),
                         child: Container(
                           width: double.infinity,
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
                             color: state == 1
@@ -121,16 +121,16 @@ class BookAppointmentView extends StatelessWidget {
                           child: Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(10.0),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: ClinicColors.white,
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.mode_night,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5.0,
                               ),
                               Text(
@@ -162,7 +162,7 @@ class BookAppointmentView extends StatelessWidget {
                       onTap: () => BlocProvider.of<SelectHourCubit>(context)
                           .selectHour(index),
                       child: Container(
-                        margin: EdgeInsets.only(right: 5.0, top: 10.0),
+                        margin: const EdgeInsets.only(right: 5.0, top: 10.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: state == index

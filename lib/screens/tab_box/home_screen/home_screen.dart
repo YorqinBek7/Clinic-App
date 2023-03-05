@@ -18,13 +18,13 @@ class HomeScreen extends StatelessWidget {
           Container(
             width: 44.0,
             height: 44.0,
-            margin: EdgeInsets.only(left: 20.0, top: 10.0),
+            margin: const EdgeInsets.only(left: 20.0, top: 10.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               color: ClinicColors.C_AFAFAF,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10.0,
           ),
           Column(
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 'Mahmudul',
                 style: _textStyle.displaySmall,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               Text(
@@ -46,14 +46,14 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               ClinicIcons.notif,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 15.0,
           ),
         ],
@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Padding(
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                 controller: _searchTextField,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 26.0,
             ),
             Align(
@@ -87,11 +87,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             _doctorCategoriesView(_textStyle),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             _suggestionView(_textStyle),
@@ -110,13 +110,13 @@ class HomeScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () => Navigator.pushNamed(
                         context, ClinicRoutes.doctorsScreen),
-                    child: Text('View all'),
+                    child: const Text('View all'),
                   ),
                 ],
               ),
             ),
             _doctorsView(_textStyle),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             )
           ],
@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  SizedBox _doctorsView(TextTheme _textStyle) {
+  SizedBox _doctorsView(TextTheme textStyle) {
     return SizedBox(
       height: 193.0,
       child: ListView.builder(
@@ -140,7 +140,7 @@ class HomeScreen extends StatelessWidget {
             color: ClinicColors.white,
             borderRadius: BorderRadius.circular(16.0),
           ),
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
               Container(
@@ -151,13 +151,13 @@ class HomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(22.0),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4.0,
               ),
               Flexible(
                 child: Text(
                   'Dr. Mahmud N',
-                  style: _textStyle.displayMedium!.copyWith(
+                  style: textStyle.displayMedium!.copyWith(
                     fontWeight: FontWeight.w700,
                     fontSize: 15.0,
                   ),
@@ -165,13 +165,13 @@ class HomeScreen extends StatelessWidget {
                   maxLines: 1,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4.0,
               ),
               Flexible(
                 child: Text(
                   'Heart Serigon',
-                  style: _textStyle.displaySmall!.copyWith(fontSize: 14.0),
+                  style: textStyle.displaySmall!.copyWith(fontSize: 14.0),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                 ),
@@ -183,7 +183,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  SizedBox _suggestionView(TextTheme _textStyle) {
+  SizedBox _suggestionView(TextTheme textStyle) {
     return SizedBox(
       height: 123.0,
       child: ListView.builder(
@@ -192,8 +192,8 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index) => Stack(
           children: [
             Container(
-              padding: EdgeInsets.all(10.0),
-              decoration: BoxDecoration(color: ClinicColors.white),
+              padding: const EdgeInsets.all(10.0),
+              decoration: const BoxDecoration(color: ClinicColors.white),
               margin: EdgeInsets.only(
                 left: index == 0 ? 20.0 : 14.0,
                 right: index == 10 - 1 ? 20.0 : 0.0,
@@ -220,10 +220,10 @@ class HomeScreen extends StatelessWidget {
                           width: 2.0,
                           color: ClinicColors.C_0F9B7B,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5.0,
                         ),
-                        Flexible(
+                        const Flexible(
                           child: Text(
                             "For cardio patent here can easliy contact with doctor. Can chat &live chat.",
                             maxLines: 3,
@@ -241,7 +241,7 @@ class HomeScreen extends StatelessWidget {
               child: Container(
                 height: 24.0,
                 width: 47.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: ClinicColors.C_0F9B7B,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(5.0),
@@ -250,7 +250,7 @@ class HomeScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     '100\$',
-                    style: _textStyle.displaySmall!.copyWith(
+                    style: textStyle.displaySmall!.copyWith(
                       color: ClinicColors.white,
                       fontSize: 12.0,
                     ),
@@ -264,7 +264,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  SizedBox _doctorCategoriesView(TextTheme _textStyle) {
+  SizedBox _doctorCategoriesView(TextTheme textStyle) {
     return SizedBox(
       height: 141.0,
       child: ListView.builder(
@@ -276,7 +276,7 @@ class HomeScreen extends StatelessWidget {
             left: index == 0 ? 20.0 : 14.0,
             right: index == 5 - 1 ? 20.0 : 0.0,
           ),
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             color: ClinicColors.C_AFAFAF,
@@ -289,7 +289,7 @@ class HomeScreen extends StatelessWidget {
               Flexible(
                 child: Text(
                   'Cardio Specialist',
-                  style: _textStyle.displaySmall!.copyWith(
+                  style: textStyle.displaySmall!.copyWith(
                     fontSize: 17.0,
                     fontWeight: FontWeight.w500,
                     color: ClinicColors.white,
@@ -302,7 +302,7 @@ class HomeScreen extends StatelessWidget {
               Flexible(
                 child: Text(
                   '27 Doctors',
-                  style: _textStyle.displaySmall!.copyWith(
+                  style: textStyle.displaySmall!.copyWith(
                     fontSize: 14.0,
                     fontWeight: FontWeight.w400,
                     color: ClinicColors.white,
